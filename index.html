@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <html>
 
 <head>
@@ -13,11 +15,17 @@
             <div id="form">
                 <span id="heading-text">Log in and spend some virtual time with your gym buddies&#8987;</span>
                 <br />
-                <input type="text" />
                 <br />
-                <input type="password" />
+                <label>Username: </label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+                <label>Password : </label>
+                <input type="password" placeholder="Enter Password" name="password" required>
                 <br />
-                <button id="submit-button">Submit</button>
+                <button id="submit">Login</button>
+                <br />
+                <input type="checkbox" checked="checked"> Remember me
+                <button type="button" class="cancelbtn"> Cancel</button>
+                Forgot <a href="#"> password? </a>
             </div>
             <div id="left-top-logo">
                 <div id="dumbbell-container">
