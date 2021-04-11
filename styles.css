@@ -16,15 +16,8 @@ body {
   box-shadow: 0px 4px 52px rgba(0, 0, 0, 0.13);
 }
 
-#logo-container {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-}
-
 #form {
-  margin-top: 100px;
+  margin-top: 250px;
 }
 
 #heading-text {
@@ -37,13 +30,13 @@ input {
   border-radius: 5px;
   width: 90%;
   padding: 5px;
-  border: 2px solid #099dfd;
+  border: 2px solid tan;
   font-size: 1.25em;
 }
 
 #submit-button {
-  background-color: grey;
-  color: white;
+  background-color: tan;
+  color: black;
   border: none;
   border-radius: 8px;
   padding: 8px 16px 8px 16px;
@@ -65,11 +58,21 @@ input {
   display: flex;
   border-radius: 2000px;
   background-color: rgba(255, 255, 255, 0.3);
-  width: 700px;
-  height: 700px;
+  width: 800px;
+  height: 800px;
   align-items: center;
   justify-content: center;
 }
+
+#left-top-logo {
+  display: flex;
+}
+
+#dumbbell-container {
+  margin-top: 250px;
+}
+
+
 
 #image-container {
   margin-top: -30px;
@@ -77,6 +80,6 @@ input {
 
 #bottom-text {
   font-size: 30px;
-  color: white;
-  margin-top: 80px;
+  color: tan;
+  margin-bottom: 30px;
 }
