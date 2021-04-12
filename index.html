@@ -17,12 +17,19 @@
                 <br />
                 <br />
                 <label>Username: </label>
-                <input type="text" placeholder="Enter Username" name="username" required>
-                <label>Password : </label>
-                <input type="password" placeholder="Enter Password" name="password" required>
+
+
+                <form onsubmit="return validate()">
+                    <input type="text" id="email" placeholder="Enter Username" name="username" required />
+
+                    <label>Password : </label>
+                    <input type="password" id="password" placeholder="Enter Password" name="password" required />
+                    <span id="ewarn" class="warning">Incorrect email or password</span>
+                    <br />
+                    <button id="submit" type="submit">Login</button>
+                </form>
                 <br />
-                <button id="submit">Login</button>
-                <br />
+
                 <input type="checkbox" checked="checked"> Remember me
                 <button type="button" class="cancelbtn"> Cancel</button>
                 Forgot <a href="#"> password? </a>
@@ -45,6 +52,35 @@
 
         </div>
     </div>
+    <script>
+        function validate() {
+            let email = document.getElementById("email")
+            let password = document.getElementById("password")
+
+            if (email.value.match(/\S+@\S+/)) {
+
+                email.className = ""
+                document.getElementById('ewarn').className = "block"
+
+                if (password.value.length >= 8) {
+                    password.className = ""
+                    document.getElementById('pwarn').className = "block"
+
+                    return true
+                }
+                // else {
+                //     password.className = "incorrect"
+                //     document.getElementById('pwarn').className = "none"
+                //     return false
+
+                // }
+            } else {
+                email.className = "incorrect"
+                document.getElementById('ewarn').className = "none"
+                return false
+            }
+        }
+    </script>
 </body>
 
 </html>
