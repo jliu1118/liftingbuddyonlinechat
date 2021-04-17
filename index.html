@@ -1,86 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karantina&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css " />
+    <title>Video Call Application</title>
+    <style>
+        body {
+            background-image: url('./16321.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 110%;
+            background-position: center;
+        }
+    </style>
+    <iframe src="https://free.timeanddate.com/clock/i7rlr6l6/n224/fn16/fs16/tct/pct/ftb/pa8/tt0/tw1/th1/ta1/tb4"
+        frameborder="0" width="213" height="54" allowtransparency="true"></iframe>
+
+
 </head>
 
 <body>
-    <div id="container">
-        <div id="left-pane">
-
-            <div id="form">
-                <span id="heading-text">Log in and spend some virtual time with your gym buddies&#8987;</span>
-                <br />
-                <br />
-                <label>Username: </label>
-
-
-                <form onsubmit="return validate()">
-                    <input type="text" id="email" placeholder="Enter Username" name="username" required />
-
-                    <label>Password : </label>
-                    <input type="password" id="password" placeholder="Enter Password" name="password" required />
-                    <span id="ewarn" class="warning">Incorrect email or password</span>
-                    <br />
-                    <button id="submit" type="submit">Login</button>
-                </form>
-                <br />
-
-                <input type="checkbox" checked="checked"> Remember me
-                <button type="button" class="cancelbtn"> Cancel</button>
-                Forgot <a href="#"> password? </a>
+    <div class="flexContainer">
+        <div class="left-pane">
+            <div class="logo">
+                <img src="sore-today-strong-tomorrow.svg" class="logoElement" />
             </div>
-            <div id="left-top-logo">
-                <div id="dumbbell-container">
-                    <img src="./sore-today-strong-tomorrow.svg" alt="dumbbell" />
-                </div>
-            </div>
+            <span id="heading-text">Log in and spend some virtual time with your gym buddies&#8987;</span>
+            <br />
+            <br />
+            <label>Username: </label>
+            <input type="text" id="username" placeholder="Enter Username" value="JohnDoe123" />
+            <label>Password : </label>
+            <input type="text" id="channelName" placeholder="Channel" value="AgoraDemo" />
+            <button class id="submit" type="submit">Login</button>
+            <input type="checkbox" checked="checked"> Remember me
+            <button type="button" id="submit" class="cancelbtn"> Cancel</button>
+            Forgot <a href="#"> password? </a>
         </div>
-        <div id="right-pane">
-            <div id="bottom-text">
-                <span>Friends that train together stays together&#x221e</span>
-            </div>
-            <div id="illustration-container">
-                <div id="image-container">
-                    <img src="./barbell.svg" alt="hero illustration" />
-                </div>
+        <div class="right-container">
+            <div class="right-pane">
+                <div id="SelfStream"></div>
+                <div id="remoteStream"></div>
             </div>
 
         </div>
     </div>
-    <script>
-        function validate() {
-            let email = document.getElementById("email")
-            let password = document.getElementById("password")
-
-            if (email.value.match(/\S+@\S+/)) {
-
-                email.className = ""
-                document.getElementById('ewarn').className = "block"
-
-                if (password.value.length >= 8) {
-                    password.className = ""
-                    document.getElementById('pwarn').className = "block"
-
-                    return true
-                }
-                // else {
-                //     password.className = "incorrect"
-                //     document.getElementById('pwarn').className = "none"
-                //     return false
-
-                // }
-            } else {
-                email.className = "incorrect"
-                document.getElementById('ewarn').className = "none"
-                return false
-            }
-        }
-    </script>
+    <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.1.1.js"></script>
+    <script src="goLive.js"></script>
 </body>
 
 </html>
